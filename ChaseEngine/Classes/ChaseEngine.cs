@@ -46,7 +46,7 @@ namespace Engines
                 eplatformer = new PlatformEnemy(game,
                         game.Content.Load<Texture2D>(@"Images/chaser"), new Vector2(100, 100),
                         new Vector2(300,100), 1);
-                chasers = new ChasingEnemy[Utility.NextRandom(2,5)];
+            chasers = new ChasingEnemy[Utility.NextRandom(2, 5)];
 
             for (int i = 0; i < chasers.Count(); i++)
                 {
@@ -56,7 +56,6 @@ namespace Engines
                                 Utility.NextRandom(game.GraphicsDevice.Viewport.Height)),
                              1);
                     chasers[i].Velocity = (float)Utility.NextRandom(2, 5);
-                    chasers[i].CollisionDistance = Utility.NextRandom(1, 3);
                 }
 
              

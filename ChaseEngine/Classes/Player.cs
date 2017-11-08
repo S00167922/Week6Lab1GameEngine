@@ -77,6 +77,9 @@ namespace Sprites
                 {
                     _soundPlayer = _directionSounds[(int)_direction].CreateInstance();
                     _soundPlayer.Play();
+                    
+
+
                 }
             }
         }

@@ -1,5 +1,6 @@
 ﻿using Engines;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,7 +14,7 @@ namespace ChaseEngine
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Engines.ChaseEngine chaseEngine;
-
+        SoundEffect snd;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -42,6 +43,10 @@ namespace ChaseEngine
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
              chaseEngine = new Engines.ChaseEngine(this);
+            // WARNING Sound effects will not work unless DirectX is installed on the machine
+            snd = Content.Load<SoundEffect>(@"Audio\3");
+            SoundEffect.MasterVolume = 1f;
+            snd.CreateInstance().Play();
             // TODO: use this.Content to load your game content here
         }
 

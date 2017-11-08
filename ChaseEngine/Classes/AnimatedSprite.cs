@@ -89,7 +89,9 @@ namespace Sprites
                     }
             //set the source to be the current frame in our animation
                     sourceRectangle = new Rectangle(currentFrame * spriteWidth, 0, spriteWidth, spriteHeight);
-            }
+                    BoundingRect = new Rectangle((int)this.position.X, (int)this.position.Y, this.spriteWidth, this.spriteHeight);
+
+        }
         public bool collisionDetect(Sprite otherSprite)
         {
             

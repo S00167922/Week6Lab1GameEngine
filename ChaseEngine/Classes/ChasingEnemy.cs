@@ -14,29 +14,18 @@ namespace Sprites
         // Rectangle to detect if the player is close by
         private Rectangle collisionField;
 
-       
-        int collisionDistance = 1;
-
-        public int CollisionDistance
-        {
-          get { return collisionDistance; }
-          set { collisionDistance = value; }
-        }
-        bool viewCollisionField = false;
+        public Point ColliionFieldscale = new Point(2,2);
+        bool viewCollisionField = true;
         Texture2D collisionRectTexture;
         
         public ChasingEnemy(Game g, Texture2D texture, Vector2 Position1, int framecount) 
              : base(g,texture,Position1,framecount)
         {
             //Image for the rectangle only viewed if viewCollisionField is on
-            //collisionRectTexture = g.Content.Load<Texture2D>("rectFrame");
+            collisionRectTexture = g.Content.Load<Texture2D>("rectFrame");
 
             startPosition = Position1;
-            // calculate the collision field
-            collisionField = new Rectangle((int)position.X - texture.Width/framecount * collisionDistance,
-                                            (int)position.Y - texture.Height * collisionDistance,
-                                              texture.Width/framecount * 3 * collisionDistance,
-                                             texture.Height * 3 * collisionDistance);
+            
         }
 
         public void follow(Player p)
@@ -58,12 +47,10 @@ namespace Sprites
 
         public override void Update(GameTime g)
         {
-            // recalculate the collision field as the Chase Enemy may have moved
-            // if it is following the Player
-            collisionField = new Rectangle((int)position.X - SpriteWidth * collisionDistance,
-                                            (int)position.Y - SpriteHeight * collisionDistance,
-                                            SpriteWidth * 3 * collisionDistance,
-                                             SpriteHeight * 3 * collisionDistance);
+            // Calculate the collison field
+            collisionField = BoundingRect;
+            collisionField.Location -= collisionField.Size * ColliionFieldscale;
+            collisionField.Size += (collisionField.Size + collisionField.Size) * ColliionFieldscale;
             // call the base update => try Enemy Class => try Sprite Class
             base.Update(g);
         }
