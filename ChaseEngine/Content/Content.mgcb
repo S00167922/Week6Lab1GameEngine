@@ -85,3 +85,33 @@
 /processorParam:TextureFormat=Color
 /build:Images\up.png
 
+#begin Audio\0.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio\0.wav
+
+#begin Audio\1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio\1.wav
+
+#begin Audio\2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio\2.wav
+
+#begin Audio\3.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio\3.wav
+
+#begin Audio\4.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio\4.wav
+

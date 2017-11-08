@@ -29,7 +29,7 @@ namespace Sprites
              : base(g,texture,Position1,framecount)
         {
             //Image for the rectangle only viewed if viewCollisionField is on
-            collisionRectTexture = g.Content.Load<Texture2D>("rectFrame");
+            //collisionRectTexture = g.Content.Load<Texture2D>("rectFrame");
 
             startPosition = Position1;
             // calculate the collision field
